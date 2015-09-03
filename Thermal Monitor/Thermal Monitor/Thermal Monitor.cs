@@ -20,15 +20,15 @@ namespace Thermal_Monitor
             if (!HighLogic.LoadedSceneIsFlight)
                 return;
             // a hack because how the heating rates should be calculated is not obvious
-            internalRate = internalRate * 0.9 + 0.1 * (part.temperature - lastIntTemp) / TimeWarp.fixedDeltaTime ;
-            lastIntTemp = part.temperature;
+           // internalRate = internalRate * 0.9 + 0.1 * (part.temperature - lastIntTemp) / TimeWarp.fixedDeltaTime ;
+            //lastIntTemp = part.temperature;
 
-            skinRate = skinRate * 0.99 + 0.01 * (part.skinTemperature - lastSkinTemp) / TimeWarp.fixedDeltaTime;
-            lastSkinTemp = part.skinTemperature;
+            //skinRate = skinRate * 0.99 + 0.01 * (part.skinTemperature - lastSkinTemp) / TimeWarp.fixedDeltaTime;
+            //lastSkinTemp = part.skinTemperature;
             //double internalRate = (part.thermalConductionFlux + part.thermalInternalFluxPrevious + part.skinInternalConductionMult * (part.skinTemperature - part.temperature)) / part.thermalMass;
             //double skinRate = (part.thermalConvectionFlux + part.thermalRadiationFlux + part.skinInternalConductionMult * (part.temperature - part.skinTemperature)) / part.skinThermalMass;
             temp = string.Format("{0:0.00}K | Skin: {1:0.00}K", part.temperature, part.skinTemperature);
-            heatingRate = string.Format("{0:0.00}K/s | Skin: {1:0.00}K/s", internalRate, skinRate);
+            //heatingRate = string.Format("{0:0.00}K/s | Skin: {1:0.00}K/s", internalRate, skinRate);
         }
     }
 }
